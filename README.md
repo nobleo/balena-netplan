@@ -11,7 +11,7 @@ Example usage in a docker-compose file:
 ```yaml
   balena-netplan:
     image: nobleo/balena-netplan
-    priviliged: true
+    privileged: true
     network_mode: host
     labels:
       io.balena.features.dbus: '1'

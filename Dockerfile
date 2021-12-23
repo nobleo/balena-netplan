@@ -1,6 +1,6 @@
 FROM balenalib/generic-debian:latest
 
-RUN install_packages bash iproute2 netplan.io systemd-sysv
+RUN install_packages bash iproute2 network-manager netplan.io systemd-sysv
 
 RUN cd /lib/systemd/system/sysinit.target.wants/ \
     && ls | grep -v systemd-tmpfiles-setup | xargs rm -f $1
