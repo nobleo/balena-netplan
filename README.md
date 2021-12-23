@@ -12,6 +12,8 @@ Example usage in a docker-compose file:
   balena-netplan:
     image: nobleo/balena-netplan
     privileged: true
+    cap_add:
+      - CAP_SYS_ADMIN
     network_mode: host
     labels:
       io.balena.features.dbus: '1'
@@ -20,6 +22,7 @@ Example usage in a docker-compose file:
       CONFIG_FILE_CONTENT: |
         network:
           version: 2
+          renderer: networkd
           ethernets:
             eth0:
               dhcp4: no
